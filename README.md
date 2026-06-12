@@ -15,8 +15,7 @@ Classificar transações de cartão de crédito como **legítimas ou fraudulenta
 - **Features:** `Time`, `Amount` e V1–V28 (componentes PCA por razões de confidencialidade)
 - **Desbalanceamento:** 284.315 legítimas (99.83%) vs. 492 fraudes (0.17%)
 
-> O arquivo `creditcard.csv` deve ser colocado em `data/raw/creditcard.csv`.
-> Por questões de tamanho, o dataset não é versionado neste repositório.
+> Por questões de tamanho, o dataset não é versionado neste repositório. Siga os passos abaixo para baixá-lo automaticamente.
 
 ## Instalação
 
@@ -25,6 +24,15 @@ Requer [uv](https://docs.astral.sh/uv/) instalado.
 ```bash
 uv sync
 ```
+
+## Download dos Dados
+
+1. Crie uma conta no [Kaggle](https://www.kaggle.com) se ainda não tiver.
+2. Execute o script — na primeira vez ele abrirá o navegador para autenticação:
+   ```bash
+   uv run scripts/download_data.py
+   ```
+   O arquivo `creditcard.csv` será salvo automaticamente em `data/raw/`.
 
 ## Execução
 
