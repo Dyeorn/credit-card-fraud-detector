@@ -11,7 +11,7 @@ wheels/
 
 # Data (large files — download instructions in README)
 data/raw/*.csv
-data/processed/
+data/processed/*.csv
 
 # Jupyter
 .ipynb_checkpoints/
