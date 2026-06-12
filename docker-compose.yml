@@ -1,0 +1,18 @@
+services:
+  download:
+    build: .
+    command: uv run scripts/download_data.py
+    environment:
+      - KAGGLE_API_TOKEN=${KAGGLE_API_TOKEN}
+    volumes:
+      - ./data:/app/data
+
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./experiments:/app/experiments
+      - ./article/figures:/app/article/figures
+      - ./article/tables:/app/article/tables
+    profiles:
+      - pipeline
