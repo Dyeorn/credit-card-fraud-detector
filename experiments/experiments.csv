@@ -1,0 +1,4 @@
+date,model,hyperparameters,cv_auc_pr_mean,cv_auc_pr_std,cv_f1_mean,cv_f1_std,cv_auc_roc_mean,test_auc_pr,test_f1,test_auc_roc,observations
+2026-06-12T01:09:41,LogisticRegression,"{""classifier__C"": 10}",0.745439,0.052905,0.117375,0.006177,0.982507,0.7205,0.1139,0.9721,GridSearchCV best params
+2026-06-12T01:16:09,RandomForest,"{""classifier__max_depth"": 20, ""classifier__n_estimators"": 100}",0.840795,0.019901,0.837663,0.017969,0.966559,0.8567,0.8495,0.9561,GridSearchCV best params
+2026-06-12T01:16:42,XGBoost,"{""classifier__learning_rate"": 0.1, ""classifier__max_depth"": 6}",0.827315,0.019581,0.813584,0.019556,0.978266,0.8652,0.8079,0.9747,GridSearchCV best params
