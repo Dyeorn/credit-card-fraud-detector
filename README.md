@@ -2,6 +2,19 @@
 
 Projeto de Machine Learning para detecção de fraude em transações de cartão de crédito — AV2 da disciplina de Machine Learning (2026).
 
+**Disciplina:** Machine Learning — **Professor:** Mateus Silva  
+**Instituição:** FACAPE
+
+## Integrantes
+
+| Nome | E-mail |
+|---|---|
+| João Pedro Jacó Leite | joao.j.leite.25336@aluno.facape.br |
+| Lucas Arlégo Tavares Cavalcanti | lucas.cavalcanti.22623@aluno.facape.br |
+| Igor Macêdo da Silva Santos | igor.s.santos.24751@aluno.facape.br |
+| José Davidson Lopes Pimentel Júnior | jose.p.junior.24609@aluno.facape.br |
+| Icaro Joel Moura Pinto | icaro.pinto.25346@aluno.facape.br |
+
 ## Problema
 
 Classificar transações de cartão de crédito como **legítimas ou fraudulentas** a partir de um conjunto de features anonimizadas. O dataset é altamente desbalanceado (~0.17% de fraudes), tornando necessário o uso de métricas e estratégias apropriadas para dados com desequilíbrio de classes.
@@ -15,30 +28,64 @@ Classificar transações de cartão de crédito como **legítimas ou fraudulenta
 - **Features:** `Time`, `Amount` e V1–V28 (componentes PCA por razões de confidencialidade)
 - **Desbalanceamento:** 284.315 legítimas (99.83%) vs. 492 fraudes (0.17%)
 
-> Por questões de tamanho, o dataset não é versionado neste repositório. Siga os passos abaixo para baixá-lo automaticamente.
+> Por questões de tamanho, o dataset não é versionado neste repositório. Siga os passos abaixo para baixá-lo.
 
-## Instalação
+## Como executar
+
+### Opção A — Docker (recomendado)
+
+Requer [Docker](https://docs.docker.com/get-docker/) instalado.
+
+**1. Configure as credenciais do Kaggle**
+
+Gere um token em [kaggle.com/settings/api](https://www.kaggle.com/settings/api) e crie o arquivo `.env`:
+
+```bash
+cp .env.example .env
+# edite .env e preencha KAGGLE_API_TOKEN=<seu_token>
+```
+
+**2. Baixe os dados**
+
+```bash
+docker compose run --rm download
+```
+
+**3. Execute o pipeline**
+
+```bash
+docker compose run --rm pipeline
+```
+
+Os artefatos gerados (modelos, figuras, tabelas) ficam nas pastas do próprio repositório via volumes.
+
+---
+
+### Opção B — Ambiente local
 
 Requer [uv](https://docs.astral.sh/uv/) instalado.
+
+**1. Instale as dependências**
 
 ```bash
 uv sync
 ```
 
-## Download dos Dados
+**2. Baixe os dados**
 
-1. Crie uma conta no [Kaggle](https://www.kaggle.com) se ainda não tiver.
-2. Execute o script — na primeira vez ele abrirá o navegador para autenticação:
-   ```bash
-   uv run scripts/download_data.py
-   ```
-   O arquivo `creditcard.csv` será salvo automaticamente em `data/raw/`.
+Na primeira execução abrirá o navegador para autenticação no Kaggle:
 
-## Execução
+```bash
+uv run scripts/download_data.py
+```
+
+**3. Execute o pipeline**
 
 ```bash
 uv run python main.py
 ```
+
+---
 
 O pipeline completo executa em sequência:
 
@@ -86,6 +133,7 @@ credit-card-fraud-detector/
 │   └── visualization/  # Geração de figuras
 ├── experiments/        # Log de experimentos e modelos serializados
 ├── article/            # Artigo técnico e figuras
+├── scripts/            # Scripts utilitários (download de dados)
 └── docs/               # Documentação técnica
 ```
 
