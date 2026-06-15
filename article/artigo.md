@@ -1,6 +1,17 @@
 # Detecção de Fraude em Cartões de Crédito com Aprendizado de Máquina: Uma Comparação de Classificadores em Dados Altamente Desbalanceados
 
-**Disciplina de Machine Learning — AV2 (2026)**
+**Disciplina:** Machine Learning — **Professor:** Mateus Silva  
+**Instituição:** FACAPE
+
+## Integrantes
+
+| Nome | E-mail |
+|---|---|
+| João Pedro Jacó Leite | joao.j.leite.25336@aluno.facape.br |
+| Lucas Arlégo Tavares Cavalcanti | lucas.cavalcanti.22623@aluno.facape.br |
+| Igor Macêdo da Silva Santos | igor.s.santos.24751@aluno.facape.br |
+| José Davidson Lopes Pimentel Júnior | jose.p.junior.24609@aluno.facape.br |
+| Icaro Joel Moura Pinto | icaro.pinto.25346@aluno.facape.br |
 
 ---
 
